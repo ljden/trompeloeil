@@ -1,5 +1,18 @@
 #!/bin/sh
 
+#
+# Trompeloeil C++ mocking framework
+#
+# Copyright Björn Fahller 2022
+#
+#  Use, modification and distribution is subject to the
+#  Boost Software License, Version 1.0. (See accompanying
+#  file LICENSE_1_0.txt or copy at
+#  http://www.boost.org/LICENSE_1_0.txt)
+#
+# Project home: https://github.com/rollbear/trompeloeil
+#
+
 PASS="\033[32mPASS\033[0m"
 FAIL="\033[1;31mFAIL\033[0m"
 

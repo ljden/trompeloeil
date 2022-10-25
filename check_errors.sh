@@ -3,7 +3,7 @@
 #
 # Trompeloeil C++ mocking framework
 #
-# Copyright Björn Fahller 2014-2021
+# Copyright Björn Fahller 2014-2022
 #
 #  Use, modification and distribution is subject to the
 #  Boost Software License, Version 1.0. (See accompanying
@@ -26,7 +26,9 @@ echo "CPPFLAGS=$CPPFLAGS"
 failfile=`mktemp`
 #${CXX} --version
 cd compilation_errors
-parallel -j 1 ../verify_compilation_error.sh -- `ls *.cpp` | tee $failfile
+files=`ls *.cpp`
+parallel ../verify_compilation_error.sh ::: $files | tee $failfile
 FAILURES=`cat $failfile | grep FAIL | wc -l`
 rm $failfile
+echo "FAILURES=${FAILURES}"
 exit $FAILURES
